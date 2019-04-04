@@ -1,10 +1,10 @@
 {
   "name": "demo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@pscraper/scraper": "^1.0.0"
+    "@pscraper/scraper": "^0.0.1"
   }
 }
