@@ -1,7 +1,7 @@
 (async () => {
   const argv = require('optimist').argv;
   const listener = require('./listener')
-  const childHelper = require('../lib/childHelper')
+  const cmd = require('@pscraper/cmd')
   const {reportGenerator} = require('../lib/reportGenerator')
   const fs = require('fs')
   const puppeteer = require('puppeteer');
@@ -34,7 +34,7 @@
     }
     catch(err){
       console.log('[ERROR] file existed, going to remove')
-      await childHelper.execPromise(`rm -R ./${dir}`)
+      await cmd.execPromise(`rm -R ./${dir}`)
       fs.mkdirSync(`./${dir}`)
     }
 
@@ -75,12 +75,12 @@
     console.log('[INFO] done, browser closed')
 
     if(isReport){
-      // await childHelper.execPromise(`node script/generateReport.js --meta='${dir}/meta.json' --output='${dir}/report.json'`)
+      // await cmd.execPromise(`node script/generateReport.js --meta='${dir}/meta.json' --output='${dir}/report.json'`)
       fs.writeFileSync(`./${dir}/report.json`, JSON.stringify(reportGenerator(page.locals['reqObj'])))
     }
 
     if(isDeletTempDir) {
-      await childHelper.execPromise(`rm -r ./${dir}`)
+      await cmd.execPromise(`rm -r ./${dir}`)
       console.log(`[INFO] removed dir : ./${dir}`)
     }
   }

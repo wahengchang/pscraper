@@ -1,0 +1,9 @@
+{
+  "name": "@pscraper/cmd",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/wahengchang/pscraper#readme",
+  "author": "wahengchang",
+  "license": "MIT",
+  "private": false
+}

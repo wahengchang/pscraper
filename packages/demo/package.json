@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@pscraper/scraper": "^0.0.1"
+    "@pscraper/scraper": "^0.0.1",
+    "@pscraper/cmd": "^0.0.1"
   }
 }
