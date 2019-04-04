@@ -1,6 +1,6 @@
 {
   "name": "@pscraper/scraper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Download website to local directory (including all css, images, js, etc.)",
   "main": "index.js",
   "bin": "index.js",
@@ -9,13 +9,13 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@pscraper/cmd": "^0.0.5",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "js-meter": "^1.1.4",
     "nodemon": "^1.18.10",
     "optimist": "^0.6.1",
-    "puppeteer": "^1.6.1",
-    "@pscraper/cmd": "^0.0.1"
+    "puppeteer": "^1.6.1"
   }
 }
