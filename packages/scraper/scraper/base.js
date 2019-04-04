@@ -7,7 +7,7 @@
   const puppeteer = require('puppeteer');
 
   const CONFIG_FILE = argv.config || './config'
-  const config = require(`${__dirname}/.${CONFIG_FILE}`)
+  const config = require(`${process.cwd()}/${CONFIG_FILE}`)
 
   const {
       url,
