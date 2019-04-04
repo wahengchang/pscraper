@@ -34,7 +34,7 @@
     }
     catch(err){
       console.log('[ERROR] file existed, going to remove')
-      await cmd.execPromise(`rm -R ./${dir}`)
+      await cmd(`rm -R ./${dir}`)
       fs.mkdirSync(`./${dir}`)
     }
 
@@ -75,12 +75,12 @@
     console.log('[INFO] done, browser closed')
 
     if(isReport){
-      // await cmd.execPromise(`node script/generateReport.js --meta='${dir}/meta.json' --output='${dir}/report.json'`)
+      // await cmd(`node script/generateReport.js --meta='${dir}/meta.json' --output='${dir}/report.json'`)
       fs.writeFileSync(`./${dir}/report.json`, JSON.stringify(reportGenerator(page.locals['reqObj'])))
     }
 
     if(isDeletTempDir) {
-      await cmd.execPromise(`rm -r ./${dir}`)
+      await cmd(`rm -r ./${dir}`)
       console.log(`[INFO] removed dir : ./${dir}`)
     }
   }
