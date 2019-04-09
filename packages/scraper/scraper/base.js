@@ -38,9 +38,10 @@
       fs.mkdirSync(`./${dir}`)
     }
 
-    const page = await puppeteer.launch({
+    const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
+    const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36')
 
     if(beforeGotoPage) {
