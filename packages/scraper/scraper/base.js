@@ -38,18 +38,22 @@
       fs.mkdirSync(`./${dir}`)
     }
 
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    console.log('[INFO] Going to page: ', url)
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36')
 
-    if(beforeGotoPage)
+    if(beforeGotoPage) {
+      console.log('[INFO] before: Going to page: ', url)
       await beforeGotoPage(page)
+    }
       
     await listener.requestInterceptor(page, {
       dir: `${dir}/`,
       isDownloadResource, downloadResourceType
     })
 
+    console.log('[INFO] Going to page: ', url)
     await page.goto(url, {waitUntil: 'networkidle0'});
 
     if(afterPageLoad)
@@ -85,6 +89,8 @@
     }
   }
   catch(err){
-    console.log('[ERROR]', err)
+    console.log('[ERROR] scraper base', err)
+    throw '[ERROR] scraper base'
+
   }
 })();
