@@ -69,6 +69,8 @@
     console.log('[INFO] created index.html')
     fs.writeFileSync(`./${dir}/meta.json`, JSON.stringify(page.locals['reqObj']))
     console.log('[INFO] created meta.json')
+    fs.writeFileSync(`./${dir}/config.json`, JSON.stringify(config))
+    console.log('[INFO] created config.json')
     await page.screenshot({path: `./${dir}/${tp}-screenshot.png`});
 
     if(isDownloadCookies) {
