@@ -1,6 +1,6 @@
 {
   "name": "@pscraper/scraper",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Download website to local directory (including all css, images, js, etc.)",
   "main": "index.js",
   "bin": "index.js",
