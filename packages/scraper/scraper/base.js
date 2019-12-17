@@ -55,7 +55,12 @@
     })
 
     console.log('[INFO] Going to page: ', url)
-    await page.goto(url, {waitUntil: 'networkidle0'});
+    try {
+      await page.goto(url, {waitUntil: 'networkidle0'});
+    }
+    catch {
+      return process.exit(1)
+    }
 
     if(afterPageLoad)
       await afterPageLoad(page);
@@ -93,7 +98,6 @@
   }
   catch(err){
     console.log('[ERROR] scraper base', err)
-    throw '[ERROR] scraper base'
-
+    return process.exit(1)
   }
 })();
