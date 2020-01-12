@@ -4,11 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "test": "npx jest test"
+  },
   "dependencies": {
     "sequelize": "^5.18.4",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
     "jest": "^24.9.0"
-  }
+  },
+  "gitHead": "1062fd1e1a5b149f9f5659a496861a84c6b1cd9e"
 }

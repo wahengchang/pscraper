@@ -5,5 +5,6 @@
   "repository": "https://github.com/wahengchang/pscraper#readme",
   "author": "wahengchang",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "gitHead": "1062fd1e1a5b149f9f5659a496861a84c6b1cd9e"
 }

@@ -17,5 +17,6 @@
     "nodemon": "^1.18.10",
     "optimist": "^0.6.1",
     "puppeteer": "^1.6.1"
-  }
+  },
+  "gitHead": "1062fd1e1a5b149f9f5659a496861a84c6b1cd9e"
 }

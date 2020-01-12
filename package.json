@@ -1,4 +1,8 @@
 {
+	"scripts": {
+	  "precommit": "lerna run --concurrency 1 --stream precommit",
+	  "test": "lerna run test"
+	},
 	"devDependencies": {
 		"lerna": "^2.11.0"
 	}
