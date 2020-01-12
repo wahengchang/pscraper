@@ -20,6 +20,8 @@ $ npm install @pscraper/taskm
 ```
 
 ## Example-1 (FIFO)
+More Example: [https://github.com/wahengchang/pscraper/tree/master/packages/demo/taskm](https://github.com/wahengchang/pscraper/tree/master/packages/demo/taskm)
+
 adding new task to queue (FIFO)
 ![@pscraper_taskm-fifo](https://user-images.githubusercontent.com/5538753/72214782-e6d4ad00-3543-11ea-8e8e-1082e0343ca4.jpg)
 
@@ -83,7 +85,7 @@ await taskm.markFinished(item.id)
 ## Usage
 
 | Function   |      Description      |
-|----------|:-------------:|-
+|----------|:-------------:|
 | init()| init DB connection|
 | purge()| remove all existed ada |
 | add(uniqueId = '', body = {}) |  adding a new task to queue |
