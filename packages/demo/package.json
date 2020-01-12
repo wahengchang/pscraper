@@ -1,12 +1,12 @@
 {
   "name": "demo",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@pscraper/cmd": "^0.0.13",
+    "@pscraper/cmd": "^0.0.14",
     "@pscraper/scraper": "^0.0.1",
-    "@pscraper/taskm": "^0.0.13"
+    "@pscraper/taskm": "^0.0.14"
   }
 }
