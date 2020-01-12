@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@pscraper/cmd": "^0.0.5",
-    "@pscraper/scraper": "^0.0.1"
+    "@pscraper/scraper": "^0.0.1",
+    "@pscraper/taskm": "^1.0.0"
   }
 }
