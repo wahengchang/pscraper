@@ -98,3 +98,42 @@ test('should return null after markFail(sourceId)', async()=>{
     const res1 = await taskm.getFirst()
     expect(res1).toBeNull();
 })
+
+test('should return correct Obj by given correct Id, getTaskById(id)', async()=>{
+    const sourceId = `mockId${new Date().getTime()}`
+    const title = `${sourceId}-title`
+
+    await taskm.add(sourceId, {title})
+    const firstData = await taskm.getFirst()
+
+    expect(firstData.sourceId).toEqual(sourceId);
+    expect(firstData.title).toEqual(title);
+
+    const getTaskById = await taskm.getTaskById(firstData.id)
+    expect(getTaskById.sourceId).toEqual(sourceId);
+    expect(getTaskById.title).toEqual(title);
+})
+
+test('should return both ok and fail task, listAllTasks(id)', async()=>{
+    const failSourceId = `mockId1${new Date().getTime()}`
+    const titleFail = `${failSourceId}-title`
+    const okSourceId = `mockId2${new Date().getTime()}`
+    const titleOk = `${okSourceId}-title`
+
+    // create two task
+    await taskm.add(failSourceId, {title: titleFail})
+    await taskm.add(okSourceId, {title: titleOk})
+
+    // mark one to fail
+    await taskm.getFirst()
+    await taskm.markFail(failSourceId)
+
+    const listallTasks = await taskm.listAllTasks()
+
+    // expect to see both fail and ok objects
+    expect(listallTasks.length).toBeGreaterThan(1)
+    expect(listallTasks.find(item => item.sourceId === failSourceId)).not.toBeNull()
+    expect(listallTasks.find(item => item.sourceId === failSourceId).title).toEqual(titleFail)
+    expect(listallTasks.find(item => item.sourceId === okSourceId)).not.toBeNull()
+    expect(listallTasks.find(item => item.sourceId === okSourceId).title).toEqual(titleOk)
+})

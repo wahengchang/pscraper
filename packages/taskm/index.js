@@ -31,11 +31,11 @@ class Controller {
     return this.DB.TaskModel().findOne({ where: {status: STATUS_CREATED, ...condition}})
   }
   
-  listTasks(condition = {}){
-    return this.DB.TaskModel().findAll({ where: {status: STATUS_CREATED, ...condition}})
+  listAllTasks(condition = {}){
+    return this.DB.TaskModel().findAll({ where: {...condition}})
   }
   
-  getTaskById(condition = {}){
+  getTaskById(id){
     return this.DB.TaskModel().findOne({ where: {id}})
   }
   
@@ -61,17 +61,8 @@ class Controller {
     return this.DB.init({isPurge: true})
   }
   init(){
-    // return db.connect()
     return this.DB.init()
   }
 }
 
 module.exports = Controller
-
-// module.exports = {
-//   getFirstTask,
-//   create,
-//   finishedTask,
-//   markFailTask,
-//   init
-// }

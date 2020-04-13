@@ -86,13 +86,15 @@ await taskm.markFinished(item.id)
 
 | Function   |      Description      |
 |----------|:-------------:|
-| init()| init DB connection|
-| purge()| remove all existed ada |
-| add(uniqueId = '', body = {}) |  adding a new task to queue |
-| getFirst(condition={}) |    getting one task from queue, default FIFO   |
-| getFirstRandom(condition={})| getting one task from queue randomly |
-| markFinished(id)| mark task as finished, would appear in getFirst()|
-| markFail(id)| mark task as fail, would appear in getFirst()|
+| `init()`| init DB connection|
+| `purge()`| remove all existed ada |
+| `add(uniqueId = ''`, body = {}) |  adding a new task to queue |
+| `getFirst(condition={})` |    getting one task from queue, default FIFO   |
+| `getFirstRandom(condition={})`| getting one task from queue randomly |
+| `getTaskById(id)`| getting one task by given id |
+| `listAllTasks(condition={})`| return all created and fail tasks |
+| `markFinished(id)`| mark task as finished, would appear in getFirst()|
+| `markFail(id)`| mark task as fail, would appear in getFirst()|
     
 
 ## Reference:
