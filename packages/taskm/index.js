@@ -30,9 +30,19 @@ class Controller {
   getFirst(condition = {}){
     return this.DB.TaskModel().findOne({ where: {status: STATUS_CREATED, ...condition}})
   }
+  
+  listTasks(condition = {}){
+    return this.DB.TaskModel().findAll({ where: {status: STATUS_CREATED, ...condition}})
+  }
+  
+  getTaskById(condition = {}){
+    return this.DB.TaskModel().findOne({ where: {id}})
+  }
+  
   getFirstRandom(condition = {}){
     return this.DB.TaskModel().findOne({order: this.DB.sequelize.random() , where: {status: STATUS_CREATED, ...condition}})
   }
+  
   async markFinished (id){
     const res = await this.DB.TaskModel().update({status: STATUS_FINISHED}, {where: {id}})
 
